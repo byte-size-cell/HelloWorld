@@ -1,19 +1,58 @@
-public class BannerAppUC5 {
+public class BannerAppUC6 {
 
     public static void main(String[] args) {
 
-        String[] banner = {
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "..."),
-            String.join(" ", "...", "...", "...", "...")
-        };
+        String[] oPattern = getOPattern();
+        String[] pPattern = getPPattern();
+        String[] sPattern = getSPattern();
+
+        String[] banner = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            banner[i] = oPattern[i] + "  " +
+                        oPattern[i] + "  " +
+                        pPattern[i] + "  " +
+                        sPattern[i];
+        }
 
         for (String line : banner) {
             System.out.println(line);
         }
+    }
+
+    public static String[] getOPattern() {
+        return new String[] {
+            String.join("", " *** "),
+            String.join("", "*   *"),
+            String.join("", "*   *"),
+            String.join("", "*   *"),
+            String.join("", "*   *"),
+            String.join("", "*   *"),
+            String.join("", " *** ")
+        };
+    }
+
+    public static String[] getPPattern() {
+        return new String[] {
+            String.join("", "**** "),
+            String.join("", "*   *"),
+            String.join("", "*   *"),
+            String.join("", "**** "),
+            String.join("", "*    "),
+            String.join("", "*    "),
+            String.join("", "*    ")
+        };
+    }
+
+    public static String[] getSPattern() {
+        return new String[] {
+            String.join("", " ****"),
+            String.join("", "*    "),
+            String.join("", "*    "),
+            String.join("", " *** "),
+            String.join("", "    *"),
+            String.join("", "    *"),
+            String.join("", "**** ")
+        };
     }
 }
